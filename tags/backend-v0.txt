@@ -1,0 +1,7 @@
+tag backend-v0
+
+tagger: Eric Hilary Smith <erichilarysmithsr@gmail.com>
+
+date: 2026-08-26T13:30:20Z
+
+pirddiiqlab backend v0 — initial Flask + SQLite backend
