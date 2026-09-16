@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pirddiiqlab"
+version = "0.0.0"
+description = "PIRDDIIQ Lab: Health data and insights platform for human families"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "make-DEEP-Human-Families-Healthy", email = ""}
+]
+keywords = ["health", "data", "platform", "families"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+]
+
+dependencies = [
+    "Flask>=2.0.0",
+    "Flask-SQLAlchemy>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/make-DEEP-Human-Families-Healthy/pirddiiqlab"
+Repository = "https://github.com/make-DEEP-Human-Families-Healthy/pirddiiqlab.git"
+
+[project.scripts]
+pirddiiqlab-server = "pirddiiqlab.cli:main"
+
+[tool.setuptools]
+packages = ["pirddiiqlab"]
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=pirddiiqlab --cov-report=term-missing"
